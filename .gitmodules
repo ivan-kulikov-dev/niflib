@@ -1,6 +1,3 @@
-[submodule "qhull"]
-	path = qhull
-	url = git://gitorious.org/qhull/qhull.git
 [submodule "docsys"]
 	path = docsys
 	url = git@github.com:niftools/nifdocsys.git
