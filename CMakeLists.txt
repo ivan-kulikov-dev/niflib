@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project(niflib)
 file(STRINGS "VERSION" VERSION)
 
+option(NIFLIB_BUILD_TESTS "Enable building tests" OFF)
+
 include_directories("include")
 
 SET(sources
@@ -559,9 +561,12 @@ set_target_properties(niflib_static
    PROPERTIES
    COMPILE_DEFINITIONS NIFLIB_STATIC_LINK)
 
+
+if(NIFLIB_BUILD_TESTS)
 # build the tests, this needs boost
 enable_testing()
 add_subdirectory(test)
+endif(NIFLIB_BUILD_TESTS)
 
 # build documentation
 find_package(Doxygen)
